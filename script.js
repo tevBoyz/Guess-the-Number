@@ -9,6 +9,15 @@ let res = [-1, -1, -1];
 var num_to_Guess = random4Digit();
 // var num_to_Guess = 2134;
 
+var input = document.getElementById("new_number");
+
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    check();
+  }
+});
 
 
 function addRow(number, cn, cp){
@@ -58,6 +67,7 @@ function check(){
         }
     }
     else{
+        alert('Please enter exactly 4 digits.');
         curr_num = document.getElementById("new_number").value = "";
         document.getElementById("new_number").focus();
     }
@@ -101,8 +111,6 @@ function validateInput() {
       input.value = '';
     }
   }
-
-
 
   function random4Digit(){
     return shuffle( "123456789".split('') ).join('').substring(0,4);
