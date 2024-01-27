@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess the Number</title>
+  </head>
+  <body>
+    <div id="container" class="container">
+      <h1>Guess the Number...(4 digit version)</h1>
+      <div class="table_prev">
+        <table id="table_history">
+           <thead>
+            <tr>
+                <th scope="col" style="width: 50%">Guessed Numbers</span></th>
+                <th scope="col" style="width: 25%">Correct Numbers</span></th>
+                <th scope="col" style="width: 25%">Correct Positions</span></th>
+                </tr>
+           </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+      </div>
+      <div class="current_container">
+        <div class="label">Last guess</div>
+        <div class="display">
+        <span id="screen"></span>
+        </div>
+        <div class="info">
+            <span id="correct_numbers">Correct Numbers: 0</span>
+            <span id="correct_position">Correct Positions: 0</span>
+        </div>
+      </div>
+      <div class="input_container">
+        <input type="number" id="new_number" oninput="validateInput()" placeholder="Put your guess here">
+        <button onclick="check()">Check</button>
+      </div>
+    </div>
+    <div id="congrats" class="congrats">
+      <h2>Congratulations</h2>
+      <p>The Number is</p>
+      <h1 id="corres"></h1>
+      <button onclick="restart()">Restart</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
