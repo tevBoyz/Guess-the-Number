@@ -136,6 +136,13 @@ input[type="number"]::-webkit-outer-spin-button {
   border: none;
 }
 
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 button {
   height: 75px;
   width: 200px;
@@ -161,6 +168,7 @@ button {
 
 .title_top {
   font-size: 25px;
+  text-align: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -209,6 +217,7 @@ button {
 
   .title_top {
     font-size: 25px;
+    text-align: center;
   }
 
   .table_prev {
@@ -338,6 +347,13 @@ button {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
   }
 
@@ -498,5 +514,6 @@ button {
 
   .title_top {
     font-size: 20px;
+    text-align: center;
   }
 }
