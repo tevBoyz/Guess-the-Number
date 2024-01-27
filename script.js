@@ -112,11 +112,27 @@ function getRightNums(guessed, answer){
 function validateInput() {
     const input = document.getElementById('new_number');
     const value = input.value;
+    let c = String(value).split('').map(Number);
 
     if (value.length > 4 || isNaN(value)) {
       alert('Please enter exactly 4 digits. No Zeroes, No repititions');
       input.value = '';
     }
+    if(c.indexOf(0) !== -1){
+    alert('No Zeroes, please');
+    input.value = '';
+    }
+    if(hasDuplicates(value)){
+        alert('No Duplicates, please');
+        input.value = ''; 
+    }
+  }
+
+  function hasDuplicates(a) {
+
+    const noDups = new Set(a);
+  
+    return a.length !== noDups.size;
   }
 
   function random4Digit(){
