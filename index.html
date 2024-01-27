@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="container" class="container">
-      <h1>Guess the Number...(4 digit version)</h1>
+      <h1 class="title_top">Guess the Number...(4 digit version, No Zeroes, No repititions)</h1>
       <div class="table_prev">
         <table id="table_history">
            <thead>
@@ -35,14 +35,17 @@
       </div>
       <div class="input_container">
         <input type="number" id="new_number" oninput="validateInput()" placeholder="Put your guess here">
-        <button onclick="check()">Check</button>
+        <div class="buttons">
+          <button onclick="check()">Check</button>
+          <button onclick="restart()">Restart</button>
+        </div>
       </div>
     </div>
     <div id="congrats" class="congrats">
       <h2>Congratulations</h2>
       <p>The Number is</p>
       <h1 id="corres"></h1>
-      <button onclick="restart()">Restart</button>
+      <button onclick="back()">Back</button>
     </div>
     <script src="script.js"></script>
   </body>
