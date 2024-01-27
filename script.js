@@ -33,7 +33,7 @@ function displayOnDisplay(num, cn, cp){
 }
 
 function compare(guessed_num){
-    res = [-1, -1, -1];
+    res = [0, 4, 4];
     if(guessed_num == num_to_Guess){
         res[0] = 1;
     }
@@ -61,13 +61,15 @@ function check(){
         document.getElementById("new_number").focus();
         }
         else{
+            displayOnDisplay(curr_num, res[2], res[1]);
+            addRow(curr_num, res[2], res[1]);
             document.getElementById("container").style.display = "none";
             document.getElementById("congrats").style.display = "flex";
             document.getElementById("corres").innerHTML = curr_num;
         }
     }
     else{
-        alert('Please enter exactly 4 digits.');
+        alert('Please enter exactly 4 digits. No Zeroes, No repititions');
         curr_num = document.getElementById("new_number").value = "";
         document.getElementById("new_number").focus();
     }
@@ -82,6 +84,11 @@ function getCorrectPosCount(guessed, answer){
     return count;
 }
 
+
+function back(){
+    document.getElementById("container").style.display = "flex";
+    document.getElementById("congrats").style.display = "none";
+}
 
 function restart(){
     location.reload();
@@ -107,7 +114,7 @@ function validateInput() {
     const value = input.value;
 
     if (value.length > 4 || isNaN(value)) {
-      alert('Please enter exactly 4 digits.');
+      alert('Please enter exactly 4 digits. No Zeroes, No repititions');
       input.value = '';
     }
   }
