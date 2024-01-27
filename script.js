@@ -6,7 +6,7 @@ var curr_num;
 let res = [-1, -1, -1];
 
 
-var num_to_Guess = Math.floor(Math.random() * (9999 - 1000) + 1000);
+var num_to_Guess = random4Digit();
 // var num_to_Guess = 2134;
 
 
@@ -101,3 +101,15 @@ function validateInput() {
       input.value = '';
     }
   }
+
+
+
+  function random4Digit(){
+    return shuffle( "123456789".split('') ).join('').substring(0,4);
+  }
+  
+  function shuffle(o){
+      for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+      return o;
+  }
+  
